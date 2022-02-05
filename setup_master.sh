@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # install java
+sudo apt-get update
 sudo apt-get install -y openjdk-11-jdk
 
 # install Jenkins stable
@@ -30,6 +31,9 @@ sudo add-apt-repository \
 
 sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 
 sudo usermod -aG docker jenkins
 # restart jenkins to properly set docker permissions
